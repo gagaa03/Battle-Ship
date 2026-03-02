@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleShip</title>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="style.css"> -->
+<script defer src="./main.js"></script></head>
+<body>
+    <h1>Battle Ship</h1>
+
+    <div id="message"> Welcom! </div>
+    <div class="contain">
+        <!-- 模式選擇 -->
+        <div id="mode-select-screen">
+            <h2>Select Game Mode</h2>
+            <div class="mode-btns">
+                <div class="mode-single">
+                    <button id="single-player-btn">Single Player (vs Computer)
+                        <span class="mdi mdi-desktop-classic"></span>
+                    </button>
+                    
+                </div>
+                <div class="mode-two">
+                    <button id="two-player-btn">Two Player (Pass Device)
+                        <span class="mdi mdi-fencing"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 放船 -->
+        <div id="setup-screen" style="display: none;">
+            <h2>Place your ships</h2>
+
+            <div class="setup-boards">
+                <!-- 單人模式棋盤 -->
+                <div class="board-container" id="single-setup-board" style="display:none;">
+                    <h3>Your Board</h3>
+                    <div id="player-board" class="board"></div>
+                </div>
+
+                <!-- 雙人模式棋盤 -->
+                <div class="board-container" id="two-setup-boards" style="display:none;">
+                    <div>
+                        <h3>Player 1 Setup</h3>
+                        <div id="player1-setup-board" class="board"></div>
+                    </div>
+                    <div>
+                        <h3>Player 2 Setup</h3>
+                        <div id="player2-setup-board" class="board"></div>
+                    </div>
+                </div>
+
+                <div class="boats">
+                    <div id="shipyard"></div>
+                    <!-- 新增重新拖曳區塊 -->
+                    <div id="reset-ships">
+                        <h4>Reset Ships</h4>
+                        <!-- 放回已放置但想重新拖回的船 -->
+                    </div>
+                    <button id="rotate-ship">Rotate Ship</button>
+                </div>
+            </div>
+                        
+            <button id="start-game">Start Game</button>
+
+        </div>
+
+
+        <div id="game-screen" style="display: none;">
+            <!-- 單人遊戲 -->
+            <div id="single-player-board" style="display: none;">
+                <h2 class="screen-title">Single Player Game</h2>
+                <div class="boards">
+                    <div class="board-section">
+                        <h3>Your Board</h3>
+                        <div id="player-board-game" class="board"></div>
+                    </div>
+                    <div class="board-section">
+                        <h3>Opponent Board</h3>
+                        <div id="opponent-board-game" class="board"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 雙人遊戲畫面 -->
+            <div id="two-player-boards" style="display:none;">
+                <h2 class="screen-title">Two Player Game</h2>
+                <div class="boards">
+                <div class="board-section">
+                    <h3>Player 1 Board</h3>
+                    <div id="player1-board-container">
+                        <div id="player1-board-game" class="board"></div>
+                    </div>
+                </div>
+                <div class="board-section">
+                    <h3>Player 2 Board</h3>
+                    <div id="player2-board-container">
+                        <div id="player2-board-game" class="board"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Pass Device 畫面 -->
+            <div id="pass-screen" style="display:none;">
+                <h2 class="screen-title" id="pass-message">Pass the device!</h2>
+                <p class="screen-title">Give the laptop to the other player.</p>
+                <button id="pass-continue">Continue</button>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="restart-game" style="display:none;">Play Again</button>
+            <button id="change-mode" style="display: none;">Change Mode</button>
+        </div>
+        
+    </div> 
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
