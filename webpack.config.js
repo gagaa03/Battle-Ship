@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
+  devtool: 'eval-source-map',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: './', // 關鍵：使用相對路徑
     clean: true,
   },
   plugins: [
