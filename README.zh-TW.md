@@ -10,11 +10,11 @@
 
 ## 功能特色
 
-- **單人模式** — 與具備智慧瞄準策略的電腦 AI 對決
+- **單人模式** — 與電腦對手對決
 - **雙人模式** — 本地雙人對戰，換手時顯示過場畫面，保護對方看不到你的棋盤
 - **拖放放置船艦** — 以直覺的拖曳方式在棋盤上排列船艦
 - **船艦旋轉** — 自由切換水平或垂直擺放方向
-- **AI 智慧策略** — 電腦會優先攻擊命中格的相鄰位置
+- **隨機攻擊策略** — 電腦以隨機方式攻擊，命中後會優先攻擊相鄰格
 - **深色主題介面** — 簡潔美觀的 UI，搭配自訂字型與色彩標示
 
 ---
@@ -56,42 +56,20 @@
 
 ## 快速開始
 
-### 環境需求
+直接開啟[線上試玩](https://gagaa03.github.io/Battle-Ship/)即可，無需安裝任何工具。
 
-- [Node.js](https://nodejs.org/)（v14 以上）
-- npm
-
-### 安裝
+若要在本機開發：
 
 ```bash
 git clone https://github.com/gagaa03/Battle-Ship.git
 cd Battle-Ship
 npm install
+npm start        # 開發伺服器，網址為 http://localhost:8080
+npm run build    # 建置輸出至 dist/
+npm run watch    # 檔案變更時自動重新建置
 ```
 
-### 開發模式
-
-```bash
-npm start
-```
-
-啟動 Webpack 開發伺服器，網址為 `http://localhost:8080`，支援熱重載。
-
-### 建置
-
-```bash
-npm run build
-```
-
-將編譯後的檔案輸出至 `dist/` 目錄。
-
-### 監聽模式
-
-```bash
-npm run watch
-```
-
-檔案變更時自動重新建置。
+> 本機開發需安裝 [Node.js](https://nodejs.org/)。
 
 ---
 
@@ -103,7 +81,7 @@ Battle-Ship/
 │   ├── main.js          # 遊戲控制器 — 處理 UI 事件與遊戲流程
 │   ├── ship.js          # 船艦類別 — 追蹤長度、座標與受損狀態
 │   ├── gameboard.js     # 棋盤類別 — 管理船艦放置與攻擊紀錄
-│   ├── player.js        # 玩家類別 — 人類玩家與 AI 玩家邏輯
+│   ├── player.js        # 玩家類別 — 人類玩家與電腦玩家邏輯
 │   ├── dom.js           # DOM 渲染 — 棋盤與訊息的畫面更新
 │   ├── index.html       # HTML 模板
 │   └── style.css        # 深色主題樣式
@@ -115,9 +93,3 @@ Battle-Ship/
 ├── webpack.config.js
 └── package.json
 ```
-
----
-
-## 授權
-
-本專案以 [MIT License](LICENSE) 開源授權。
