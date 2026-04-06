@@ -1,3 +1,5 @@
+[繁體中文](./README.zh-TW.md) | English
+
 # Battle-Ship
 
 A browser-based implementation of the classic naval combat game **Battleship**, built with vanilla JavaScript and Webpack.
